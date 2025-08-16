@@ -1,0 +1,39 @@
+/* Header Styles */
+.topBar {
+  background-color: goldenrod;
+  color: rgb(240, 231, 231);
+  padding: 0.5rem 1rem;
+  position: absolute;
+  position: sticky;
+}
+
+.topBarContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tagline {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tagline {
+    display: block;
+  }
+}
