@@ -1,7 +1,7 @@
 /* Header Styles */
 .topBar {
-  background-color: goldenrod;
-  color: rgb(240, 231, 231);
+  background-color: rgb(124, 90, 5);
+  color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
   position: absolute;
   position: sticky;
@@ -36,4 +36,147 @@
   .tagline {
     display: block;
   }
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.headerScrolled {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.headerDefault {
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 0;
+}
+
+.headerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 6rem;
+  margin: -2rem;
+  margin-left: 1rem;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navButton {
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  color: #f97316;
+}
+
+.ctaButton {
+  background-color: #f97316;
+  color: rewhite;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: #ea580c;
+}
+
+.mobileMenuButton {
+  display: block;
+  padding: 0.5rem;
+  color: #374151;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  display: block;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileNav {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileNavButton {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #374151;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobileNavButton:hover {
+  color: #f97316;
+}
+
+.mobileCta {
+  width: 100%;
+  background-color: #f97316;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mobileCta:hover {
+  background-color: #ea580c;
 }
