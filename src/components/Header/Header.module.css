@@ -11,9 +11,11 @@
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.875rem;
+  gap: 1rem;
+  text-align: center;
 }
 
 .contactInfo {
@@ -26,15 +28,27 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.7rem;
 }
 
 .tagline {
-  display: none;
+  font-size: 0.8rem;
 }
 
-@media (min-width: 768px) {
-  .tagline {
-    display: block;
+@media (max-width: 425px) {
+  .topBarContent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -66,10 +80,23 @@
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .tagline {
+    display: none;
+  }
+}
+
 .logo {
   width: 6rem;
   margin: -2rem;
   margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 5rem;
+    margin-top: -4rem;
+  }
 }
 
 .nav {
@@ -94,14 +121,14 @@
 }
 
 .navButton:hover {
-  color: #f97316;
+  color: rgb(124, 90, 5);
 }
 
 .ctaButton {
-  background-color: #f97316;
-  color: rewhite;
+  background-color: rgb(124, 90, 5);
+  color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
   font-weight: 500;
   transition: background-color 0.3s ease;
   border: none;
@@ -109,7 +136,7 @@
 }
 
 .ctaButton:hover {
-  background-color: #ea580c;
+ background-color: rgb(49, 37, 5);
 }
 
 .mobileMenuButton {
@@ -161,22 +188,34 @@
 }
 
 .mobileNavButton:hover {
-  color: #f97316;
+  color: rgb(124, 90, 5);
 }
 
 .mobileCta {
-  width: 100%;
-  background-color: #f97316;
+  width: fit-content; 
+  background-color: rgb(124, 90, 5);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
   font-weight: 500;
-  margin-top: 1rem;
+  margin: 1rem auto 0; 
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+
 .mobileCta:hover {
-  background-color: #ea580c;
+   background-color: rgb(49, 37, 5);
+}
+
+@media (max-width: 768px) {
+  .mobileNavButton {
+    width: auto;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
 }

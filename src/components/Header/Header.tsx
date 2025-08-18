@@ -39,7 +39,7 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.tagline}>
-            <span>Professional Carpentry & Paiting Service</span>
+            <span>Professional Carpentry & Painting Service</span>
           </div>
         </div>
       </div>
