@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Twitter, Facebook, Instagram, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, ArrowUp } from 'lucide-react';
+
 import styles from './Footer.module.css';
 import Logo from '../../assets/Logo.png'
 
@@ -46,9 +47,8 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }
+    { icon: Facebook, href: 'https://www.facebook.com/share/19d7Zj3R5o/?mibextid=wwXIfr', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/crystalfaithprojects?igsh=eDNrZnljZGNjNzV3', label: 'Instagram' }
   ];
 
   return (

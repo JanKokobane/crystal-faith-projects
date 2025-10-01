@@ -43,23 +43,50 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    const payload = {
+      access_key: 'b6c38c43-69b4-448c-98b4-68a2b3e2af66', 
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+      subject: 'New Contact Form Submission',
+      from_name: 'Crystal Faith Projects Website'
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        console.error('Submission failed:', result);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after success message
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    }, 3000);
   };
 
   return (
@@ -166,7 +193,7 @@ const Contact: React.FC = () => {
 
             {isSubmitted && (
               <div className={styles.successMessage}>
-                <p>Thank you for your message! We'll get back to you within 24 hours.</p>
+                <p>Thank you for contacting us. A member of our team will be in touch shortly.</p>
               </div>
             )}
           </form>
@@ -227,22 +254,6 @@ const Contact: React.FC = () => {
           loading="lazy" 
         />
 
-        <img 
-          className={`${styles.graphic} ${styles.top} ${styles.dark}`} 
-          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" 
-          alt="graphic" 
-          height="161" 
-          width="1920" 
-          loading="lazy" 
-        />
-        <img 
-          className={`${styles.graphic} ${styles.left} ${styles.dark}`} 
-          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" 
-          alt="graphic" 
-          height="161" 
-          width="1920" 
-          loading="lazy" 
-        />
         <img 
           className={`${styles.graphic} ${styles.bottom} ${styles.dark}`} 
           src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg" 

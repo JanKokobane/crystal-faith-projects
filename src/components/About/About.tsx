@@ -1,10 +1,11 @@
 import React from 'react';
 import { Target } from 'lucide-react';
 import styles from './About.module.css';
-import AboutImage from '../../assets/About.jpg'
-import ourMission from '../../assets/HeroSlide (4).jpg'
-import Image1 from '../../assets/cfp.jpg'
-import Image2 from '../../assets/cfp2.jpg'
+import AboutImage from '../../assets/About.jpg';
+import ourMission from '../../assets/HeroSlide (4).jpg';
+import Image1 from '../../assets/TumeloBapedi.jpg';
+import Image2 from '../../assets/NeoLegasaMasha.jpg';
+import Image3 from '../../assets/Refilwe.jpg';
 
 const About: React.FC = () => {
   const values = [
@@ -28,14 +29,19 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: 'Master Craftsperson',
+      name: 'Tumelo Bapedi (Master Craftsperson)',
       role: 'Lead Designer & Builder',
       image: Image1
     },
     {
-      name: 'Senior Craftsperson',
+      name: 'Neo Legasa Masha (Senior Craftsperson)',
       role: 'Installation Specialist',
       image: Image2
+    },
+    {
+      name: 'Desere Refilwe Motshabane',
+      role: 'Installation Specialist',
+      image: Image3
     }
   ];
 
@@ -80,24 +86,21 @@ const About: React.FC = () => {
             <div className={styles.valuesColumn}>
               <h3 className={styles.columnTitle}>Our <span className={styles.brandName}>Core Values</span></h3>
               <div className={styles.valuesList}>
-                {values.map((value, index) => {
-                  return (
-                    <div key={index} className={styles.valueItem}>
-
-                      <div className={styles.valueContent}>
-                        <h4 className={styles.valueTitle}>{value.title}</h4>
-                        <p className={styles.valueDescription}>{value.description}</p>
-                      </div>
+                {values.map((value, index) => (
+                  <div key={index} className={styles.valueItem}>
+                    <div className={styles.valueContent}>
+                      <h4 className={styles.valueTitle}>{value.title}</h4>
+                      <p className={styles.valueDescription}>{value.description}</p>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Team - Right Side */}
             <div className={styles.teamColumn}>
-              <h3 className={styles.columnTitle}></h3>
-              <p className={styles.teamSubtitle}>Meet our Team</p>
+              <h3 className={styles.columnTitle}>Meet Our <span className={styles.brandName}>Team</span></h3>
+              <p className={styles.teamSubtitle}>Crafting with heart and precision</p>
               <div className={styles.teamList}>
                 {teamMembers.map((member, index) => (
                   <div key={index} className={styles.teamMember}>
@@ -143,7 +146,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

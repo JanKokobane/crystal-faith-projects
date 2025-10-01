@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronDown, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Menu, X, ChevronDown, Facebook, Instagram } from 'lucide-react';
 import styles from './Header.module.css';
 import Logo from '../../assets/Logo.png'
 
@@ -22,10 +22,11 @@ const Header: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com', ariaLabel: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com', ariaLabel: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com', ariaLabel: 'Instagram' },
+    { icon: Facebook, href: '', ariaLabel: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/crystalfaithprojects?igsh=eDNrZnljZGNjNzV3', ariaLabel: 'Instagram' },
   ];
+
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
