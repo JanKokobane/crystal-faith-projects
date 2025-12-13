@@ -4,7 +4,7 @@ import styles from './About.module.css';
 import AboutImage from '../../assets/About.jpg';
 import ourMission from '../../assets/HeroSlide (4).jpg';
 import Image1 from '../../assets/TumeloBapedi.jpg';
-import Image2 from '../../assets/NeoLegasaMasha.jpg';
+import Image2 from '../../assets/WhatsApp Image 2025-10-04 at 16.55.10_4631e73d.jpg';
 import Image3 from '../../assets/Refilwe.jpg';
 
 const About: React.FC = () => {
@@ -29,7 +29,7 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: 'Tumelo Bapedi (Master Craftsperson)',
+      name: 'Tumelo Mapedi (Master Craftsperson)',
       role: 'Lead Designer & Builder',
       image: Image1
     },
@@ -40,7 +40,7 @@ const About: React.FC = () => {
     },
     {
       name: 'Desere Refilwe Motshabane',
-      role: 'Installation Specialist',
+      role: 'Admin',
       image: Image3
     }
   ];

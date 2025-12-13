@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
           referrerPolicy="no-referrer-when-downgrade"
         />
 
-        <img 
+        {/* <img 
           className={`${styles.graphic} ${styles.top} ${styles.light}`} 
           src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg" 
           alt="graphic" 
@@ -261,7 +261,7 @@ const Contact: React.FC = () => {
           height="161" 
           width="1920" 
           loading="lazy" 
-        />
+        /> */}
       </div>
     </section>
   );
