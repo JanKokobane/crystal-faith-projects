@@ -8,7 +8,7 @@
   background: rgb(255, 255, 255);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem; /* reduced vertical padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,8 +19,7 @@
   display: flex;
   flex-direction: column;
   width: 5rem;
-  margin-bottom: -5rem;
-  margin-top: -2rem;
+  margin: 0; /* removed negative margins */
 }
 
 .navigation {
@@ -34,7 +33,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: 1.5rem; 
 }
 
 .navigationItem {
@@ -46,7 +45,7 @@
   color: gold;
   font-weight: 500;
   transition: color 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0; /* reduced link padding */
   position: relative;
 }
 
@@ -72,7 +71,7 @@
 .socialNav {
   display: flex;
   align-items: center;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .socialList {
@@ -91,8 +90,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px; /* slightly smaller */
+  height: 32px;
   border-radius: 50%;
   background: #f3f4f6;
   color: #6b7280;
@@ -107,8 +106,8 @@
 }
 
 .socialIcon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .actionsContainer {
@@ -120,7 +119,7 @@
   background: #fbbf24;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem; /* reduced button padding */
   border-radius: 100px;
   font-weight: 600;
   cursor: pointer;
@@ -143,7 +142,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem; /* reduced mobile padding */
   display: none;
   align-items: center;
   justify-content: space-between;
@@ -191,13 +190,13 @@
 /* Mobile Menu */
 .mobileMenu {
   position: fixed;
-  top: 73px;
+  top: 65px; /* adjusted for smaller header */
   right: -100%;
   width: 280px;
-  height: calc(100vh - 73px);
+  height: calc(100vh - 65px);
   background: white;
   z-index: 999;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
   transition: right 0.3s ease;
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
@@ -209,7 +208,7 @@
 
 .mobileNavigationList {
   list-style: none;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   padding: 0;
 }
 
@@ -219,7 +218,7 @@
 
 .mobileNavigationLink {
   display: block;
-  padding: 1rem;
+  padding: 0.75rem;
   text-decoration: none;
   color: #795c05;
   font-weight: 500;
@@ -245,8 +244,8 @@
 
 .mobileSocials {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   justify-content: center;
 }
 
@@ -254,8 +253,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #f3f4f6;
   color: #6b7280;
@@ -269,8 +268,8 @@
 }
 
 .mobileSocialIcon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .mobileContactButton {
@@ -278,7 +277,7 @@
   background: #795c05;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 100px;
   font-weight: 600;
   cursor: pointer;
@@ -312,15 +311,15 @@
 
 @media (max-width: 1024px) {
   .header {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem; /* smaller padding on tablets */
   }
   
   .navigationList {
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .socialNav {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
 }
 

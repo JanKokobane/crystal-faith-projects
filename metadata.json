@@ -1,0 +1,6 @@
+{
+  "name": "Crystal Faith Projects",
+  "description": "Custom home design, handcrafted cupboards, ceilings, and furniture portfolio website.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

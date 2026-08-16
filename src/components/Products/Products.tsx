@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Star } from 'lucide-react';
-import styles from './Products.module.css';
-import Image1 from '../../assets/CustomCupboards.jpg'
-import Image2 from '../../assets/ShoeRacks.jpg'
-import Image4 from '../../assets/HeroSlide (3).jpg'
-import Image5 from '../../assets/mordenBedsidePedestals.jpg'
-import Image6 from '../../assets/modernHeadboards.jpg'
-import Image7 from '../../assets/smallmodernWineRacks.jpg'
-import Image8 from '../../assets/modernWardrobes.jpg'
+import { Star, MessageSquare, Sparkles } from 'lucide-react';
+import Image1 from '../../assets/CustomCupboards.jpg';
+import Image2 from '../../assets/ShoeRacks.jpg';
+import Image3 from '../../assets/kitckenunit.jpg';
+import Image4 from '../../assets/tvstand.jpg';
+import Image5 from '../../assets/mordenBedsidePedestals.jpg';
+import Image6 from '../../assets/modernHeadboards.jpg';
+import Image7 from '../../assets/smallmodernWineRacks.jpg';
+import Image8 from '../../assets/modernWardrobes.jpg';
 
 interface Product {
   id: number;
@@ -19,12 +19,6 @@ interface Product {
 }
 
 const Products: React.FC = () => {
-
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    setVisible(true); 
-  }, []);
-
   const [products] = useState<Product[]>([
     {
       id: 1,
@@ -32,7 +26,7 @@ const Products: React.FC = () => {
       description: 'Handcrafted storage solutions tailored to your space and style preferences.',
       category: 'Storage',
       image: Image1,
-      featured: true
+      featured: true,
     },
     {
       id: 2,
@@ -40,111 +34,105 @@ const Products: React.FC = () => {
       description: 'Organized shoe storage systems that keep your entryway neat and stylish.',
       category: 'Storage',
       image: Image2,
-      featured: false
+      featured: false,
     },
     {
       id: 3,
-      name: 'Dining Tables',
-      description: 'Elegant dining tables crafted from premium materials for lasting beauty.',
+      name: 'Fitted Kitchen Units',
+      description: 'Custom kitchen cabinetry and units crafted with precision and premium finishes.',
       category: 'Furniture',
-      image: 'https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=500',
-      featured: true
+      image: Image3,
+      featured: true,
     },
     {
       id: 4,
-      name: 'TV Stands',
-      description: 'Modern entertainment centers with cable management and storage options.',
+      name: 'TV Stands & Units',
+      description: 'Modern entertainment centers with integrated cable management and storage.',
       category: 'Furniture',
       image: Image4,
-      featured: false
+      featured: false,
     },
     {
       id: 5,
       name: 'Bedside Pedestals',
-      description: 'Stylish nightstands with drawers and compartments for bedroom essentials.',
+      description: 'Stylish nightstands with smooth drawers and compartments for bedroom essentials.',
       category: 'Bedroom',
       image: Image5,
-      featured: false
+      featured: false,
     },
     {
       id: 6,
-      name: 'Headboards',
-      description: 'Custom headboards that transform your bedroom into a luxurious retreat.',
+      name: 'Luxury Headboards',
+      description: 'Custom upholstered & wooden headboards that transform your bedroom.',
       category: 'Bedroom',
       image: Image6,
-      featured: true
+      featured: true,
     },
     {
       id: 7,
-      name: 'Wine Racks',
-      description: 'Elegant wine storage solutions for wine enthusiasts and collectors.',
+      name: 'Modern Wine Racks',
+      description: 'Elegant wine storage solutions designed for connoisseurs and collectors.',
       category: 'Storage',
       image: Image7,
-      featured: false
+      featured: false,
     },
     {
       id: 8,
-      name: 'Wardrobes',
-      description: 'Spacious wardrobes with customizable compartments and hanging space.',
+      name: 'Built-in Wardrobes',
+      description: 'Spacious wardrobes with customizable compartments, racks, and mirrors.',
       category: 'Storage',
       image: Image8,
-      featured: true
-    }
+      featured: true,
+    },
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [visibleProducts, setVisibleProducts] = useState<Product[]>([]);
-  const [isVisible, setIsVisible] = useState(false);
 
   const categories = ['All', 'Storage', 'Furniture', 'Bedroom'];
 
   useEffect(() => {
-    const filtered = selectedCategory === 'All' 
-      ? products 
-      : products.filter(product => product.category === selectedCategory);
+    const filtered = selectedCategory === 'All'
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
     setVisibleProducts(filtered);
   }, [selectedCategory, products]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = document.querySelector('#products');
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const handleWhatsAppInquiry = (productName: string) => {
+    const text = encodeURIComponent(`Hi Crystal Faith Projects! I am interested in inquiring about your "${productName}". Please send me more details and a quote.`);
+    window.open(`https://wa.me/27660539993?text=${text}`, '_blank');
+  };
 
   return (
-    <section id="products" className={`${styles.products} ${isVisible ? styles.visible : ''}`}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.textContent}>
-            <span className={styles.topper}>Handcrafted Furniture & Storage Solutions</span>
-            <h2 className={styles.title}>
-              Our <span className={`${styles.titleHighlight} ${visible ? styles.visible : ""}`}>Products</span>
+    <section id="products" className="py-20 bg-white scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3.5 py-1 rounded-full mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Handcrafted Furniture Catalog</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-3">
+              Our Handcrafted Products
             </h2>
-            <p className={styles.description}>
-              From custom cupboards to elegant dining tables, we create furniture that combines 
-              functionality with timeless style. Each piece is crafted with attention to detail 
-              and built to last.
+            <p className="text-neutral-600 text-base leading-relaxed">
+              From custom cupboards to elegant dining tables, we create furniture that combines functionality with timeless South African craftsmanship.
             </p>
           </div>
 
-          <div className={styles.categories}>
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
               <button
                 key={category}
-                className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
+                id={`cat-filter-${category.toLowerCase()}`}
                 onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  selectedCategory === category
+                    ? 'bg-neutral-900 text-white shadow-xs'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900'
+                }`}
               >
                 {category}
               </button>
@@ -152,40 +140,56 @@ const Products: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.productsGrid}>
-          {visibleProducts.map((product, index) => (
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {visibleProducts.map((product) => (
             <div
               key={product.id}
-              className={`${styles.productCard} ${product.featured ? styles.featured : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              id={`product-card-${product.id}`}
+              className="bg-neutral-50/50 rounded-2xl p-4 border border-neutral-100 shadow-2xs hover:shadow-md hover:border-neutral-200 transition-all duration-300 flex flex-col justify-between group"
             >
-              {product.featured && (
-                <div className={styles.featuredBadge}>
-                  <Star className={styles.starIcon} />
-                  Featured
+              <div>
+                {/* Image Frame with Aspect Ratio */}
+                <div className="relative rounded-xl overflow-hidden aspect-4/3 bg-neutral-200 mb-4">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  {product.featured && (
+                    <div className="absolute top-2.5 right-2.5 bg-amber-400 text-neutral-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md flex items-center gap-1 shadow-xs">
+                      <Star className="w-3 h-3 fill-neutral-950" />
+                      Featured
+                    </div>
+                  )}
+                  <div className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-xs text-neutral-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    {product.category}
+                  </div>
                 </div>
-              )}
-              
-              <div className={styles.imageContainer}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className={styles.productImage}
-                  loading="lazy"
-                />
+
+                {/* Details */}
+                <h3 className="text-base font-bold text-neutral-900 mb-1 group-hover:text-amber-600 transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-xs text-neutral-500 leading-relaxed line-clamp-2 mb-4">
+                  {product.description}
+                </p>
               </div>
 
-              <div className={styles.productInfo}>
-                <div className={styles.productHeader}>
-                  <h3 className={styles.productName}>{product.name}</h3>
-                  <span className={styles.category}>{product.category}</span>
-                </div>
-                <p className={styles.productDescription}>{product.description}</p>
+              {/* Inquiry Action */}
+              <div className="pt-3 border-t border-neutral-100 flex items-center justify-between gap-2">
+                <button
+                  onClick={() => handleWhatsAppInquiry(product.name)}
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-white hover:bg-neutral-900 hover:text-white text-neutral-900 text-xs font-semibold py-2 px-3 rounded-lg border border-neutral-200 transition-colors shadow-2xs cursor-pointer"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-600 group-hover:text-emerald-400" />
+                  <span>Inquire Price</span>
+                </button>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
