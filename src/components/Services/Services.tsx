@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import Image1 from '../../assets/Ceiling Installation.png';
 import Image2 from '../../assets/door instalation .png';
 import Image3 from '../../assets/Kitchen Units & Wardrobe Fitting.png';
@@ -95,10 +95,7 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3.5 py-1 rounded-full mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Expert Home Improvement</span>
-          </div>
+          
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-4">
             Our Professional Services
           </h2>

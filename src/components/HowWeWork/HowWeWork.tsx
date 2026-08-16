@@ -126,7 +126,7 @@ const HowWeWork: React.FC = () => {
                 onClick={() => setIsVideoModalOpen(false)}
                 className="px-6 py-2.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold transition"
               >
-                Request Free Quote
+                Request a Quote
               </a>
             </div>
           </div>

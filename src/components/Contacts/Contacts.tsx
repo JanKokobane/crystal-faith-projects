@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, Phone, Mail, Clock, MapPin, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2, Phone, Mail, Clock, MapPin } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -93,10 +93,7 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3.5 py-1 rounded-full mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Get in Touch</span>
-          </div>
+         
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-4">
             Ready to Start Your Project?
           </h2>

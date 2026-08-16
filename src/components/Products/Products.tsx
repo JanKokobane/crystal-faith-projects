@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, MessageSquare, Sparkles } from 'lucide-react';
+import { Star, MessageSquare } from 'lucide-react';
 import Image1 from '../../assets/CustomCupboards.jpg';
 import Image2 from '../../assets/ShoeRacks.jpg';
 import Image3 from '../../assets/kitckenunit.jpg';
@@ -109,10 +109,7 @@ const Products: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3.5 py-1 rounded-full mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Handcrafted Furniture Catalog</span>
-            </div>
+            
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-3">
               Our Handcrafted Products
             </h2>
