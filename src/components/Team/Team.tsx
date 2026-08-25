@@ -13,7 +13,7 @@ interface TeamMember {
 const Team: React.FC = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: 'Tumelo Bapedi',
+      name: 'Tumelo Mapedi',
       role: 'Master Carpenter & Lead Craftsperson',
       image: TumeloImg,
       phone: '+27660539993',
